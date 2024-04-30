@@ -1,0 +1,117 @@
+body {
+    background-color: #303030;
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+    align-items: center;
+    color: #fff;
+    padding: 10px;
+}
+
+#timer {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #2ecc71;
+    text-align: center;
+    margin: 20px auto;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05);
+    }
+}
+
+#buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #2ecc71;
+    color: #fff;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    margin: 0.5rem;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
+}
+
+button:hover {
+    background-color: #27ae60;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+button[disabled] {
+    opacity: 0.5;
+    cursor: default;
+}
+
+#laps {
+    max-height: 200px;
+    overflow-y: auto;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #2ecc71;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.lap-item {
+    margin: 5px;
+    padding: 5px;
+    border-bottom: 1px solid #2ecc71;
+    animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+#share {
+    display: none;
+}
+
+@media (min-width: 600px) {
+    #timer {
+        font-size: 6rem;
+    }
+}
+
+@media (min-width: 800px) {
+    #timer {
+        font-size: 7rem;
+    }
+
+    button {
+        font-size: 2rem;
+        padding: 1.5rem 3rem;
+        margin: 1rem;
+    }
+
+    #laps {
+        width: 80%;
+    }
+}
